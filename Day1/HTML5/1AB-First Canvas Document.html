@@ -2,9 +2,47 @@
 <html>
 	<head>
 		<title>Our First Canvas</title>
+		<link href="css/main.css" type="text/css" rel="stylesheet">
+		<script type="text/javascript">
+			window.onload      = function(){
+				var theCanvas    = document.getElementById('canvas1');
+				theCanvas.width  = 800;
+				theCanvas.height = 600;
+
+				if(theCanvas){
+					var ctx = theCanvas.getContext("2d");
+					if(ctx){
+						myCyan           	 = "#88FFEB";
+						darkCyan           = "#76DECC";
+						mediumCyan         = "#7FEBD8";
+						var myGreen        = "#25CC81";
+						var darkGreen      = "#20B06F";
+						var fillColor      = myGreen;
+						var strokeColor    = darkGreen;
+						var strokeWeight   = 5;
+						// Draw Here.
+						// Draw a stroke rectangle.
+						ctx.strokeStyle = strokeColor;
+						ctx.lineWidth   = strokeWeight;
+						ctx.strokeRect(25,25,100,125);
+						// Filled rectangle
+						ctx.fillStyle   = myGreen;
+						ctx.fillRect(150,25,100,125)
+						// Rectangle with Stroke
+						ctx.strokeStyle = strokeColor;
+						ctx.fillStyle   = myGreen;
+						ctx.lineWidth   = strokeWeight*2;
+						ctx.fillRect(275,25,100,125)
+						ctx.strokeRect(275,25,100,125);
+
+					}
+				}
+			}
+		</script>
 	</head>
 	<body>
 		<h1>First Canvas Example</h1>
 		<p>This document contains our first canvas example</p>
+		<canvas id="canvas1">Your browser does not support canvas.</canvas>
 	</body>
 </html>
