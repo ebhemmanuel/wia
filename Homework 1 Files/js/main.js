@@ -42,9 +42,11 @@ var mediumCyan     = "#7FEBD8";
 var darkCyan       = "#76DECC";
 var white          = "#F7F7F7";
 var gray           = "#ECECEC";
+var orange         = "#FF9748";
 var fillColor      = myGreen;
 var strokeColor    = darkGreen;
 var strokeWeight   = 5;
+var image          = document.getElementById('source');
 /*******************************************/
 window.onload      = function(){
 
@@ -197,7 +199,10 @@ Draw text into your canvas.  It can said whatever you would like in any color.
 	if (theCanvas) {
 		var ctx5 				= theCanvas5.getContext("2d");
 		if (ctx5) {
-
+			var myString  = "Brim."
+			ctx5.font     = "25pt Helvetica";
+			ctx5.fillStyle= myGreen;
+			ctx5.fillText(myString,150,150);
 		}
 	}
 
@@ -222,7 +227,9 @@ var theCanvas6    = document.getElementById('canvas6');
 	if (theCanvas6) {
 		var ctx6 				= theCanvas6.getContext("2d");
 		if (ctx6) {
-
+			ctx6.drawImage(image,50,20,image.width,image.height);
+			ctx6.drawImage(image,50,20,image.width/2,image.height/2);
+			ctx6.drawImage(image,300,300,300,300,12,12,200,200);
 		}
 	}
 
@@ -245,7 +252,23 @@ You must use at least 3 different methods.
 	if (theCanvas7) {
 		var ctx7 				= theCanvas7.getContext("2d");
 		if (ctx7) {
-
+			var degrees     = 360;
+			var radians     = (Math.PI/180)*degrees;
+			var myString    = "Today's Goal"
+			var secString   = "Burn it all."
+			ctx7.font       = "15pt Helvetica";
+			ctx7.fillStyle  = gray;
+			ctx7.fillRect(150,0,300,300);
+			ctx7.fillStyle  = myGreen;
+			ctx7.lineWidth  = strokeWeight;
+			ctx7.beginPath();
+			ctx7.arc(300,150,60,0,radians);
+			ctx7.fill();
+			ctx7.fillStyle  = darkGreen;
+			ctx7.fillText(myString,240,60);
+			ctx7.fillStyle  = white;
+			ctx7.font       = "lighter 12pt Helvetica";
+			ctx7.fillText(secString,265,160);
 		}
 	}
 } // End window.load
