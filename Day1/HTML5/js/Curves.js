@@ -15,8 +15,8 @@ window.onload = function(){
 	if (ctx) {
 			ctx.strokeStyle = mediumCyan;
 			ctx.lineWidth   = 5;
-			ctx.lineCap = "round";
-			ctx.lineJoin = "round";
+			ctx.lineCap     = "round";
+			ctx.lineJoin    = "round";
 
 			// Stroke a simple bezier curve
 			ctx.beginPath();
@@ -24,6 +24,8 @@ window.onload = function(){
 			ctx.bezierCurveTo(50,100,200,100,200,150)
 			ctx.stroke();
 
+			// Second simple bezier curve
+			ctx.strokeStyle = myGreen;
 			ctx.beginPath();
 			ctx.moveTo(150,200); // start point
 			ctx.bezierCurveTo(50,100,200,100,200,150)
@@ -33,10 +35,10 @@ window.onload = function(){
 			ctx.strokeStyle = endPoint;
 			ctx.lineWidth   = 5;
 			ctx.beginPath();
-			ctx.moveTo(50,200);
-			ctx.lineTo(50,100);
-			ctx.lineTo(200,100);
-			ctx.lineTo(200,150);
+			ctx.moveTo(50,200);  // Start  Curve Point
+			ctx.lineTo(50,100);  // First  Curve Point
+			ctx.lineTo(200,100); // Second Curve Point
+			ctx.lineTo(200,150); // Third  Curve Point
 			ctx.stroke();
 
 			//stroke quadratic curve
