@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>HTML5 Audio Example</title>
+	</head>
+	<body>
+		<audio src="audio/music.mp3" controls>
+			Audio is not supported.
+		</audio>
+		<audio id="audio" controls onClick="pauseToggle()">
+			<source src="audio/music.mp3" type="audio/mp3"/>
+			<source src="audio/music.ogg" type="audio/ogg"/>
+			Audio is not supported.
+		</audio>
+		<div class="boom"><button onClick="clicked()">Skip 2 Seconds</button>
+			</div>
+		<script type="text/javascript" src="js/audioControl.js"></script>
+	</body>
+</html>
+
+
